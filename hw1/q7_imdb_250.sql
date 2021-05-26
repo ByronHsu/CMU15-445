@@ -1,0 +1,2 @@
+SELECT primary_title, (COUNT(votes)*1.0/(COUNT(votes)*1.0+25000))*AVG(rating)+(25000/(COUNT(votes)*1.0+25000))*(SELECT AVG(rating) FROM ratings) AS wr FROM titles INNER JOIN ratings ON titles.title_id = ratings.title_id GROUP BY
+titles.title_id ORDER BY wr DESC LIMIT 10;
