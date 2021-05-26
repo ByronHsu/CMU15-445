@@ -1,0 +1,1 @@
+SELECT * FROM titles WHERE runtime_minutes IN (SELECT MAX(runtime_minutes) FROM titles) ORDER BY type ASC, primary_title ASC;

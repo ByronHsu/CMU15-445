@@ -1,0 +1,1 @@
+SELECT type, COUNT(*) AS count FROM titles GROUP BY type ORDER BY count ASC;

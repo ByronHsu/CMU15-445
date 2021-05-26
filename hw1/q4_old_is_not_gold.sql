@@ -1,0 +1,1 @@
+SELECT decade, COUNT(*) as count FROM (SELECT SUBSTR(premiered, 1, 3) || "0s"  AS decade, *  FROM titles WHERE premiered IS NOT NULL) GROUP BY decade ORDER BY count DESC;
